@@ -2,19 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-}
+} */
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-}
+} */
 
 body {
   color: rgb(var(--foreground-rgb));
@@ -24,6 +24,70 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+.md-container ol {
+  list-style-type: numeric;
+  @apply pl-4;
+}
+.md-container ul {
+  list-style-type: disc;
+  @apply pl-4;
+}
+
+.sign-in-option-card {
+  @apply relative overflow-hidden;
+}
+.sign-in-option-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    118deg,
+    transparent 50%,
+    rgba(120, 216, 113, 0.5) 0%
+  );
+  transition: 1s ease-in-out;
+}
+.sign-in-option-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  transition: 1s ease-in-out;
+  background-image: linear-gradient(
+    118deg,
+    rgba(120, 216, 113, 0.5) 50%,
+    transparent 0%
+  );
+}
+.sign-in-option-card:hover::before {
+  transform: translate(-200px, -200px);
+}
+.sign-in-option-card:hover::after {
+  transform: translate(200px, 200px);
+}
+@media (min-width: 700px) {
+  .sign-in-option-card::before {
+    background-image: linear-gradient(
+      -55deg,
+      transparent 50%,
+      rgba(120, 216, 113, 0.5) 0%
+    );
+  }
+  .sign-in-option-card::after {
+    background-image: linear-gradient(
+      -55deg,
+      rgba(120, 216, 113, 0.5) 50%,
+      transparent 0%
+    );
+  }
 }
 
 @layer utilities {
