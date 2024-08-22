@@ -44,7 +44,7 @@ const Header: FC<HeaderProps> = ({}) => {
               About
             </Link>
           </NavbarItem>
-          <NavbarItem isActive>
+          <NavbarItem>
             <Link href='#' aria-current='page'>
               Contact{' '}
             </Link>

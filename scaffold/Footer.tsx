@@ -10,20 +10,20 @@ interface FooterProps {}
 const Footer: FC<FooterProps> = ({}) => {
   return (
     <>
-      <footer className='w-full bg-default-200 text-default-700 py-3 mt-14'>
-        <div className='flex justify-between max-w-[1200px] mx-auto px-10'>
-          <div className='flex gap-2 items-end'>
+      <footer className='w-full bg-default-200 text-default-700 py-5 mt-14'>
+        <div className='flex flex-col md:flex-row items-center md:justify-between max-w-[1200px] mx-auto px-10 gap-4'>
+          <div className='flex gap-2  order-1'>
             <Logo size='sm' />
             <p className='font-bold text-inherit'>Recylinker</p>
           </div>
 
-          <div className='flex justify-center text-xs text-center mt-10'>
+          <div className='flex justify-center text-xs text-center order-3 md:order-2'>
             &copy; Recylinker {moment().year()}. <br />
             Powered By Fusion Muse.
           </div>
-          <div className='flex gap-3 items-end'>
+          <div className='flex gap-3  order-2 md:order-3'>
             <span className='font-bold'>Connect with us:</span>
-            <ul className='mt-12 flex justify-center gap-3'>
+            <ul className=' flex justify-center gap-3'>
               <li>
                 <Link
                   href='https://x.com/fusionmuseideas'
